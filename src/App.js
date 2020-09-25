@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <Fragment>
         <Switch>
-          <Route exact ='/' component ={Login} />
+          <Route exact path ='/' component ={Login} />
         </Switch>
       </Fragment>
     )
