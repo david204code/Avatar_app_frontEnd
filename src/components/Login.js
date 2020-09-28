@@ -17,7 +17,6 @@ class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-
     let user = {
       name: this.state.name,
       password: this.state.password
@@ -32,7 +31,13 @@ class Login extends Component {
       body: JSON.stringify(user)
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+      this.props.setCurrentUser(data)
+      this.props.history.push('/profile')
+    })
+    // .then(data => console.log(data))
+    // .then(data => this.props.setCurrentUser(data))
+    // console.log(this.props.setCurrentUser)
   }
 
   render() {
