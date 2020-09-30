@@ -45,10 +45,12 @@ class App extends Component {
             render ={props => (
               <Login {...props}
                 setCurrentUser ={this.setCurrentUser}
+                routerProps ={props}
               />
             )}
           />  
-          <Route exact path ='/create_account' component ={CreateAccount} />
+          {/* <Route exact path ='/create_account' component ={CreateAccount} /> */}
+          <Route exact path ='/create_account' render ={(props) => <CreateAccount updateCurrentUser ={this.updateCurrentUser} routerProps ={props} /> } />
           <Route exact path ='/profile' render={() => {
             return this.state.CurrentUser ? (
               <Profile currentUser ={this.state.CurrentUser} currentAvatar ={this.state.CurrentAvatar} />

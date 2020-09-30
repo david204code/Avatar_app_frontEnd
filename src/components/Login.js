@@ -34,7 +34,7 @@ class Login extends Component {
     .then(response => response.json())
     .then(data => {
       this.props.setCurrentUser(data)
-      this.props.history.push('/profile')
+      // this.props.routerProps.history.push('/profile')
     })
     // .then(data => console.log(data))
     // .then(data => this.props.setCurrentUser(data))
